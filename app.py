@@ -37,4 +37,4 @@ if st.button("📊 Statistiques / Autre"):
     st.link_button("Confirmer l'ouverture", url_autre)
     st.info("Cliquez sur le bouton de confirmation ci-dessus.")
 
-st.caption("Centralisé par Streamlit")a
+st.caption("Centralisé par Streamlit")
