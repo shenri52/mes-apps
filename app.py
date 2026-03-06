@@ -39,14 +39,13 @@ st.markdown("""
         text-decoration: none !important;
         transition: 0.3s !important;
     }
-
-    /* Effet au survol ou clic : le bouton se remplit de rouge */
-    div.stLinkButton > a:active, div.stLinkButton > a:hover {
-        background-color: #ff4b4b !important;
-        opacity:0.5;
-        color: white !important;
-    }
-    </style>
+    /* Effet au survol (hover) et au clic (active) */
+    div.stLinkButton > a:hover, div.stLinkButton > a:active {
+        background-color: rgba(255, 75, 75, 0.2) !important;
+        border-color: #ff4b4b !important;
+        color: #ff4b4b !important;
+        transform: scale(1.02); /* Petit effet de zoom pour le retour tactile */
+    }yle>
     """, unsafe_allow_html=True)
 
 st.title("📲 Mon tableau de bord")
