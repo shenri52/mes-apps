@@ -36,7 +36,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🚀 Mon tableau de bord")
+st.title("📲 Mon tableau de bord")
 st.write("Sélectionnez l'application à ouvrir :")
 
 # --- UTILISATION DE COLONNES POUR CENTRER ---
@@ -49,8 +49,6 @@ with col_centrale:
     url_cuisine = "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/"
     if st.button("🍳 Mes recettes"):
         st.link_button("Ouvrir Mes recettes ➔", url_cuisine)
-
-    st.write("---") 
 
     # --- BOUTON APPLI 2 ---
     url_autre = "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/"
