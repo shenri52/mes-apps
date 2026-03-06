@@ -43,6 +43,7 @@ st.markdown("""
     /* Effet au survol ou clic : le bouton se remplit de rouge */
     div.stLinkButton > a:active, div.stLinkButton > a:hover {
         background-color: #ff4b4b !important;
+        opacity:0.5;
         color: white !important;
     }
     </style>
