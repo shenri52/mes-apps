@@ -7,67 +7,46 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- STYLE CSS FINAL ---
+# --- STYLE CSS POUR BOUTONS UNIQUES ET IDENTIQUES ---
 st.markdown("""
     <style>
-    /* Centre le texte global de la page */
     .stApp {
         text-align: center;
     }
 
-    /* Supprime les paddings des colonnes pour un alignement parfait */
-    [data-testid="column"] {
+    /* On cible directement le lien pour qu'il ressemble à un gros bouton */
+    div.stLinkButton > a {
         width: 100% !important;
-        flex: 1 1 auto !important;
-    }
-
-    /* Force TOUS les boutons (normaux et liens) à être identiques */
-    div.stButton > button, div.stLinkButton > a {
-        width: 100% !important;  /* Utilise toute la largeur de la colonne centrale */
-        min-width: 250px !important; /* Taille minimum pour le confort */
-        height: 70px !important;
-        font-size: 20px !important;
+        min-width: 280px !important;
+        height: 80px !important;
+        background-color: #4CAF50 !important; /* Vert pour le premier */
+        color: white !important;
+        font-size: 22px !important;
         font-weight: bold !important;
         border-radius: 15px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin: 10px 0px !important;
+        margin: 15px auto !important;
         text-decoration: none !important;
-        transition: 0.3s;
-    }
-
-    /* Couleur rouge spécifique pour le bouton de confirmation */
-    div.stLinkButton > a {
-        background-color: #ff4b4b !important;
-        color: white !important;
         border: none !important;
     }
-    
-    /* Effet au survol/clic */
-    div.stButton > button:active, div.stLinkButton > a:active {
-        transform: scale(0.98);
+
+    /* Couleur différente pour le deuxième bouton pour les différencier */
+    div.stLinkButton:nth-of-type(2) > a {
+        background-color: #2196F3 !important; /* Bleu pour le second */
     }
     </style>
     """, unsafe_allow_html=True)
 
 st.title("📲 Mon tableau de bord")
-st.write("Sélectionnez l'application à ouvrir :")
+st.write("Cliquez pour ouvrir l'appli :")
 
-# --- CENTRAGE VIA COLONNES ---
-# On utilise une colonne centrale assez large pour le mobile
+# On utilise une colonne pour bien centrer sur mobile
 _, col_centrale, _ = st.columns([0.1, 0.8, 0.1])
 
 with col_centrale:
-    # --- BOUTON APPLI 1 ---
-    url_cuisine = "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/"
-    if st.button("🍳 Mes recettes"):
-        st.link_button("Ouvrir Mes recettes ➔", url_cuisine)
-
-    # Petit espace entre les deux blocs
-    st.write("")
-
-    # --- BOUTON APPLI 2 ---
-    url_autre = "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/"
-    if st.button("📍 GéoCollect"):
-        st.link_button("Ouvrir GéoCollect ➔", url_autre)
+    # UN SEUL BOUTON PAR APPLI - CLIC DIRECT
+    st.link_button("🍳 Mes recettes", "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/")
+    
+    st.link_button("📍 GéoCollect", "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/")
