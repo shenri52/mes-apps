@@ -24,7 +24,7 @@ st.markdown("""
         background-color: transparent !important; 
         
         /* Texte */
-        color: #ffffff !important;
+        color: #2D58CC !important;
         
         /* Bordure */
         border: 2px solid #2D58CC !important;
@@ -43,7 +43,7 @@ st.markdown("""
     div.stLinkButton > a:hover, div.stLinkButton > a:active {
         background-color: rgba(255, 75, 75, 0.2) !important;
         border-color: #ff4b4b !important;
-        color: #ff4b4b !important;
+        color: #2D58CC !important;
         transform: scale(1.02); /* Petit effet de zoom pour le retour tactile */
     }yle>
     """, unsafe_allow_html=True)
