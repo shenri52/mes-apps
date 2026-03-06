@@ -71,6 +71,3 @@ with col_centrale:
     url_autre = "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/"
     if st.button("📍 GéoCollect"):
         st.link_button("Ouvrir GéoCollect ➔", url_autre)
-
-st.write("---")
-st.caption("Centralisé par Streamlit")
