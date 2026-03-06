@@ -7,29 +7,47 @@ st.set_page_config(
     layout="centered"
 )
 
-# Style personnalisé pour centrer et égaliser les boutons
+# --- STYLE CSS AVANCÉ POUR CENTRAGE TOTAL ---
 st.markdown("""
     <style>
-    /* Centre le titre et le texte */
-    .stApp {
+    /* 1. Centre tout le contenu de la colonne principale */
+    .block-container {
+        padding-top: 2rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    
-    /* Force TOUS les boutons à être identiques */
+
+    /* 2. Centre les titres et textes */
+    .stMarkdown, .stTitle, .stCaption {
+        width: 100%;
+        text-align: center !important;
+    }
+
+    /* 3. Force les boutons à être centrés et de taille identique */
+    /* On cible le container du bouton pour le centrer */
+    div.stButton, div.stLinkButton {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* On définit la taille précise des boutons */
     div.stButton > button, div.stLinkButton > a {
-        width: 100% !important;
-        height: 80px !important;
+        width: 280px !important; /* Largeur fixe pour qu'ils soient identiques */
+        height: 70px !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+        border-radius: 12px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        font-size: 20px !important;
-        font-weight: bold !important;
-        border-radius: 15px !important;
-        margin-bottom: 10px !important;
+        margin: 10px auto !important;
         text-decoration: none !important;
     }
-    
-    /* Couleur spécifique pour le bouton de confirmation */
+
+    /* Couleur pour le bouton de confirmation */
     div.stLinkButton > a {
         background-color: #ff4b4b !important;
         color: white !important;
@@ -37,7 +55,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🚀 Mon Tableau de Bord")
+st.title("🚀 Mon tableau de bord")
 st.write("Sélectionnez l'application à ouvrir :")
 
 # --- BOUTON APPLI 1 ---
@@ -45,7 +63,7 @@ url_cuisine = "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/"
 if st.button("🍳 Gestion Cuisine"):
     st.link_button("Ouvrir Cuisine ➔", url_cuisine)
 
-st.divider() # Petite ligne de séparation
+st.write("---") # Séparateur visuel propre
 
 # --- BOUTON APPLI 2 ---
 url_autre = "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/"
