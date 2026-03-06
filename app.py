@@ -25,14 +25,14 @@ st.write("Sélectionnez l'application à ouvrir :")
 
 # --- BOUTON APPLI 1 ---
 # Remplace le lien par ton URL réelle
-url_cuisine = "https://ton-appli-cuisine.streamlit.app/"
+url_cuisine = "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/"
 if st.button("🍳 Gestion Cuisine"):
     st.link_button("Confirmer l'ouverture", url_cuisine)
     st.info("Cliquez sur le bouton de confirmation ci-dessus.")
 
 # --- BOUTON APPLI 2 ---
 # Remplace le lien par ton URL réelle
-url_autre = "https://ton-autre-appli.streamlit.app/"
+url_autre = "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/"
 if st.button("📊 Statistiques / Autre"):
     st.link_button("Confirmer l'ouverture", url_autre)
     st.info("Cliquez sur le bouton de confirmation ci-dessus.")
