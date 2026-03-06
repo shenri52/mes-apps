@@ -7,41 +7,57 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- STYLE CSS POUR BOUTONS UNIQUES ET IDENTIQUES ---
+# --- STYLE CSS : FOND TRANSPARENT + BORDURE ROUGE ---
 st.markdown("""
     <style>
     .stApp {
         text-align: center;
     }
 
-    /* On cible directement le lien pour qu'il ressemble à un gros bouton */
+    /* Style pour les boutons de lien transparents avec bordure */
     div.stLinkButton > a {
         width: 100% !important;
         min-width: 280px !important;
-        height: 80px !important;
-        background-color: #4CAF50 !important; /* Vert pour le premier */
-        color: white !important;
-        font-size: 22px !important;
+        height: 70px !important;
+        
+        /* Fond transparent */
+        background-color: transparent !important; 
+        
+        /* Texte en rouge pour aller avec la bordure */
+        color: #ff4b4b !important;
+        
+        /* Bordure rouge comme le bouton supprimer */
+        border: 2px solid #ff4b4b !important;
+        
+        font-size: 20px !important;
         font-weight: bold !important;
-        border-radius: 15px !important;
+        border-radius: 12px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         margin: 15px auto !important;
         text-decoration: none !important;
-        border: none !important;
+        transition: 0.3s !important;
+    }
+
+    /* Effet au survol ou clic : le bouton se remplit de rouge */
+    div.stLinkButton > a:active, div.stLinkButton > a:hover {
+        background-color: #ff4b4b !important;
+        color: white !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
 st.title("📲 Mon tableau de bord")
-st.write("Cliquez pour ouvrir l'appli :")
+st.write("Accès direct à vos applications :")
 
-# On utilise une colonne pour bien centrer sur mobile
+# Centrage via colonne centrale
 _, col_centrale, _ = st.columns([0.1, 0.8, 0.1])
 
 with col_centrale:
-    # UN SEUL BOUTON PAR APPLI - CLIC DIRECT
+    # LIENS DIRECTS (Un seul clic)
     st.link_button("🍳 Mes recettes", "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/")
     
     st.link_button("📍 GéoCollect", "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/")
+
+st.caption("Centralisé par Streamlit")
