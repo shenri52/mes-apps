@@ -31,11 +31,6 @@ st.markdown("""
         text-decoration: none !important;
         border: none !important;
     }
-
-    /* Couleur différente pour le deuxième bouton pour les différencier */
-    div.stLinkButton:nth-of-type(2) > a {
-        background-color: #2196F3 !important; /* Bleu pour le second */
-    }
     </style>
     """, unsafe_allow_html=True)
 
