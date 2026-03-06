@@ -23,11 +23,11 @@ st.markdown("""
         /* Fond transparent */
         background-color: transparent !important; 
         
-        /* Texte en rouge pour aller avec la bordure */
-        color: #ff4b4b !important;
+        /* Texte */
+        color: #ffffff !important;
         
-        /* Bordure rouge comme le bouton supprimer */
-        border: 2px solid #ff4b4b !important;
+        /* Bordure */
+        border: 2px solid #2D58CC !important;
         
         font-size: 20px !important;
         font-weight: bold !important;
@@ -59,5 +59,3 @@ with col_centrale:
     st.link_button("🍳 Mes recettes", "https://mes-recettes-crevqstqc3xledupcnovx9.streamlit.app/")
     
     st.link_button("📍 GéoCollect", "https://mes-poi-enbqgzwutukww3i7adjs2q.streamlit.app/")
-
-st.caption("Centralisé par Streamlit")
